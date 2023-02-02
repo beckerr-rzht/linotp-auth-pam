@@ -784,7 +784,7 @@ int pam_linotp_get_config(int argc, const char *argv[], LinOTPConfig * config, i
                 log_error("Your prompt definition is to long: %s [%]", argv[i], RESMAXLEN);
                 return (PAM_AUTH_ERR);
             } else {
-                config->prompt = temp;
+                config->prompt = strdup(temp);
             }
         }
         else {
